@@ -21,12 +21,12 @@ export default function BlogsType(props) {
             <p className="blog-type-para">{props.blogTypeDesc}</p></div>
         </div>
         <div className="btn-container-horizontal">
-          <Link href={"/"}>
+          <Link href={props.blogUrl}>
             <a className="btn">
               View Content
             </a>
           </Link>
-          <Link href={props.blogUrl}>
+          <Link href={"/"}>
             <a className="btn">
               Visit Blogs
             </a>

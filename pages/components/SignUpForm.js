@@ -19,7 +19,7 @@ export default function SignUpForm() {
         body: JSON.stringify(info)
       });
       const data = await response.json();
-      localStorage.setItem("Api_key",data.api_key);
+      document.cookie = `API_KEY=${data.api_key}`
       document.location = "/";
     }else{
       alert("Please fill the form correcctly.");

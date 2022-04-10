@@ -3,10 +3,10 @@ import excuteQuery from './ConnectSql.mjs'
 export default async (req, res) => {
     try {
       const result = await excuteQuery({
-          query: 'insert into iblog.popularblogs value()',
-          values: [req.body.content],
+          query: 'select * from iblog.popularblogs',
+          values:[]
       });
-      res.send({sucess:"True"})
+      res.send({sucess:"True", data:result})
   } catch ( error ) {
   }
   };
