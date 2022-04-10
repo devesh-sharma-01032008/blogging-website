@@ -1,0 +1,307 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800;900&display=swap");
+
+/*
+==========================================================================
+Variables start here
+==========================================================================
+*/
+:root{
+  --header-bg : linear-gradient(rgb(140, 0, 255),rgb(101, 63, 237));
+  --white:white;
+  --footer-bg : rgba(8, 0, 255, 0.728);
+  --box-shadow-color : blue;
+}
+/*
+==========================================================================
+Variables end here
+==========================================================================
+*/
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "Sans serif";
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1.4rem;
+}
+
+header {
+  width: 100vw;
+  height: 60px;
+  background: var(--header-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0px;
+  z-index: 10000000000000000000000;
+}
+
+
+/* =============================================================================== 
+Classes starts here
+===================================================================================
+*/
+
+/*
+==========================================================================
+  Navbar style start here
+==========================================================================
+*/
+.logo{
+  font-size: 2.5rem;
+  color: var(--white);
+  margin-left: 5rem;
+  font-family: "Poppins", "Sans serif";
+}
+
+.nav-bar ul {
+  display: flex;
+  padding: 0rem 1rem;
+}
+
+.nav-bar ul li {
+  list-style: none;
+  margin: 0rem 1rem;
+}
+
+.nav-bar ul li:last-child{
+  margin: 0rem 5rem 0rem 0rem;
+}
+
+/*
+==========================================================================
+  NavBar style ends here
+==========================================================================
+*/
+
+
+/*
+==========================================================================
+  blog type start here
+==========================================================================
+*/
+
+
+
+.blog-paragraph{
+  font-size: 1.3rem;
+}
+
+.container{
+  padding: 3rem 5rem;
+}
+
+.blogs-type-container{
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.blog-type{
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0px 0px 5px var(--box-shadow-color);
+  border-radius: 5px;
+  flex-grow: 1;
+  padding: 1rem 1rem;
+}
+
+.blog-type-title{
+  font-size: 2.3rem;
+  text-align: center;
+}
+.img-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.blog-type-image{
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+
+/*
+==========================================================================
+  blog type end here
+==========================================================================
+*/
+
+.blog{
+  box-shadow: 0px 0px 5px var(--box-shadow-color);
+  margin: 5rem 5rem;
+  border-radius: 5px;
+}
+
+.popular-blog-btn{
+  padding: 1rem 0rem;
+  justify-content: flex-start !important;
+}
+
+/*
+==========================================================================
+  Popular blogs style start here
+==========================================================================
+*/
+
+
+/*
+==========================================================================
+  Popular blogs style end here
+==========================================================================
+*/
+
+
+/* =============================================================================== 
+Classes end here
+===================================================================================
+*/
+
+
+/* ===========================================================================
+Utilities classes starts here
+==============================================================================
+*/
+.first-heading{
+  font-size: 3rem;
+  margin: .5rem 0rem;
+
+}
+.second-heading{
+  font-size: 2.3rem;
+  margin: .5rem 0rem;
+}
+
+.curved-button{
+  border: 2px solid var(--white);
+  border-radius: 5px;
+  padding: 0.5rem 1.5rem;
+}
+
+.btn{
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 5px;
+  color: var(--white);
+  background: var(--header-bg);
+}
+.btn-container-vertical{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1rem;
+}
+.btn-container-horizontal{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 1rem;
+}
+/*
+==========================================================================
+  Utilities class ends here
+==========================================================================
+*/
+
+
+/*
+==========================================================================
+  Footer style start here
+==========================================================================
+*/
+.footer{
+  background: var(--footer-bg);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--white);
+  margin-top: 10rem;
+  flex-direction: column;
+  position: relative;
+  bottom: 0px;
+}
+.social-links-container{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.copyright{
+  font-size: 1.5rem;
+  margin-top: 15px;
+}
+
+/*
+==========================================================================
+    Footer style end here
+==========================================================================
+*/
+
+
+/*
+==========================================================================
+  form style start here
+==========================================================================
+*/
+
+.form-container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input-field{
+  width: 70%;
+  border:none;
+  border-bottom: 2px solid var(--box-shadow-color);
+  padding: 1rem 2rem;
+  margin:1rem 2rem;
+  border-radius: 5px;
+}
+
+.textarea-field{
+  border: 2px solid var(--box-shadow-color);
+}
+
+.input-field:focus,
+input:active{
+  border: 2px solid var(--box-shadow-color);
+  outline: none !important;
+}
+
+.utils-btn-container{
+  display: flex;
+  margin-top: 5rem;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+}
+
+.send-btn, .reset-btn{
+  display: block;
+}
+
+/*
+==========================================================================
+  form style end here
+==========================================================================
+*/
