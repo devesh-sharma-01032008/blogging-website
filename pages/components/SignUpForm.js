@@ -10,7 +10,7 @@ export default function SignUpForm() {
     const cpassword = document.getElementById("c-password").value;
     if(password == cpassword && password.length >= 8 && phone_number.length == 10){
       const info = {name,email,phone_number,password};
-      const response = await fetch("/api/SignUp",{
+      const response = await fetch("/api/AddAccount",{
         method:"POST",
         mode:"cors",
         headers:{
@@ -19,6 +19,7 @@ export default function SignUpForm() {
         body: JSON.stringify(info)
       });
       const data = await response.json();
+      alert(data.api_key);
       document.cookie = `API_KEY=${data.api_key}`
       document.location = "/";
     }else{

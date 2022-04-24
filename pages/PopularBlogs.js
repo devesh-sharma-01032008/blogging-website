@@ -16,8 +16,9 @@ export default function PopularBlogs() {
       <Head>
         <title>IBlog: Popular Blogs</title>
       </Head>
-      <section>
-        {popularBlogs.map((element) => {
+      <section className="container">
+        <h1 className="first-heading">Popular Blogs</h1>
+        {/* {popularBlogs.map((element) => {
           return (
             <PopularBlog
               key={element.id}
@@ -26,7 +27,7 @@ export default function PopularBlogs() {
               url={element.Url}
             />
           );
-        })}
+        })} */}
       </section>
     </>
   );

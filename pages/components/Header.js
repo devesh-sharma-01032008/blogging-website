@@ -3,6 +3,11 @@ import React from "react";
 export default function Header() {
   return (
     <header>
+      <div className="menu">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
       <h1 className="logo">
         i<span>Blog</span>
       </h1>
@@ -24,7 +29,7 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link className="curved-button" href={"/SignUp"}>
+            <Link href={"/SignUp"}>
               <a className="curved-button">Sign Up</a>
             </Link>
           </li>

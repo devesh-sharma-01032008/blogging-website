@@ -30,7 +30,9 @@ export default function MainBody() {
             <h1 className="first-heading">Popular Blogs Categories</h1>
           </div>
           <div className="container blogs-type-container" id="blogs-type">
-            {blogTypes.map((element) => {
+            <BlogsType imageSrc={"/images/c.png"} blogTypeTitle={"C language for absolute beginners"} blogUrl={"/c-language"} blogTypeDesc={"This is the beginning of a persson to enter a field of computer science and it is also called mother of programming as many languages are made from this language"} />
+            <BlogsType imageSrc={"/images/java.png"} blogTypeTitle={"Java language"} blogUrl={"/java-language"} blogTypeDesc={"This is the language which is used in various industries as this language is popular for its object oriented methodology and it requires certain prerequisite like you must be aware of function or in simple c or other language"} />
+            {/* {blogTypes.map((element) => {
               return (
                 <BlogsType
                   key={element.sno}
@@ -40,7 +42,7 @@ export default function MainBody() {
                   blogUrl={element.url}
                 />
               );
-            })}
+            })} */}
           </div>
         </section>
       </main>
