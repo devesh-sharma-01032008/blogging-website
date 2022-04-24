@@ -10,7 +10,7 @@ export default function SignUpForm() {
     const cpassword = document.getElementById("c-password").value;
     if(password == cpassword && password.length >= 8 && phone_number.length == 10){
       const info = {name,email,phone_number,password};
-      const response = await fetch("/api/AddAccount",{
+      const response = await fetch("/api/AddNewUser",{
         method:"POST",
         mode:"cors",
         headers:{

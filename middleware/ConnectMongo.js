@@ -1,4 +1,4 @@
-import {Db, MongoClient} from "mongodb";
+import {MongoClient, ServerApiVersion} from "mongodb";
 const {MONGO_DB, MONGO_URI} =   process.env;
 
 
@@ -14,17 +14,17 @@ export async function connectToDatabase(){
 
   const opts = {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    serverApi: ServerApiVersion.v1
   }
 
-  let client = new MongoClient(MONGO_URI);
+  let client = new MongoClient(MONGO_URI,opts);
   await client.connect();
   let db = client.db(MONGO_DB);
-
   cachedClient = client;
   cachedDb = db;
   return {
     client: cachedClient,
-      db: cachedDb
+    db: cachedDb
   }
 }

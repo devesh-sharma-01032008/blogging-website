@@ -4,8 +4,9 @@ import BlogsType from "../reusable_components/BlogsType";
 export default function MainBody() {
   const [blogTypes, setBlogTypes] = useState([]);
   useEffect(async () => {
-    const response = await fetch("/api/GetBlogTypes");
+    const response = await fetch("/api/GetPopularBlogsType");
     const data = await response.json();
+    console.log(data);
     setBlogTypes(data.data);
   }, []);
   return (
@@ -30,19 +31,17 @@ export default function MainBody() {
             <h1 className="first-heading">Popular Blogs Categories</h1>
           </div>
           <div className="container blogs-type-container" id="blogs-type">
-            <BlogsType imageSrc={"/images/c.png"} blogTypeTitle={"C language for absolute beginners"} blogUrl={"/c-language"} blogTypeDesc={"This is the beginning of a persson to enter a field of computer science and it is also called mother of programming as many languages are made from this language"} />
-            <BlogsType imageSrc={"/images/java.png"} blogTypeTitle={"Java language"} blogUrl={"/java-language"} blogTypeDesc={"This is the language which is used in various industries as this language is popular for its object oriented methodology and it requires certain prerequisite like you must be aware of function or in simple c or other language"} />
-            {/* {blogTypes.map((element) => {
+            {blogTypes.map((element) => {
               return (
                 <BlogsType
                   key={element.sno}
-                  imageSrc={element.imagesrc}
+                  imageSrc={element.imageUrl}
                   blogTypeTitle={element.title}
                   blogTypeDesc={element.description}
                   blogUrl={element.url}
                 />
               );
-            })} */}
+            })}
           </div>
         </section>
       </main>

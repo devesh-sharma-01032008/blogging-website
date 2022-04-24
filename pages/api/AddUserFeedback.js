@@ -5,12 +5,12 @@ export default async (req, res) => {
     try {
       const {db} = await connectToDatabase();
       const { body } = req;
-      const { name, email, phone_number, password } = body;
-      console.log(name,email,phone_number,password)
-      const data = { name, email, phone_number, password };
+      const {name,email, phone_number, feedback  } = body;
+      console.log(name,email, phone_number, feedback)
+      const data = { name,email, phone_number, feedback};
       console.log(data);
-      await db.collection("user_details").insertOne(data);
-      res.send({ sucess: "Login Successfully", Api_key: "luck" });
+      await db.collection("feedbacks").insertOne(data);
+      res.send({ sucess: "Sent sucessfully", Api_key: "luck" });
     } catch (error) {
       const response = {
         error: "300",

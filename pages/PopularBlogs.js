@@ -7,6 +7,7 @@ export default function PopularBlogs() {
   useEffect(async () => {
     const response = await fetch("/api/GetPopularBlogs");
     const data = await response.json();
+    console.log(data.data)
     setPopularBlogs(data.data);
     console.log(popularBlogs);
     console.log(data);
@@ -18,16 +19,16 @@ export default function PopularBlogs() {
       </Head>
       <section className="container">
         <h1 className="first-heading">Popular Blogs</h1>
-        {/* {popularBlogs.map((element) => {
+        {popularBlogs.map((element) => {
           return (
             <PopularBlog
-              key={element.id}
-              title={element.Title}
-              description={element.Description}
-              url={element.Url}
+              key={element._id}
+              title={element.title}
+              description={element.description}
+              url={element.url}
             />
           );
-        })} */}
+        })}
       </section>
     </>
   );

@@ -8,7 +8,7 @@ export default function BlogsType(props) {
         <div className="container">
           <div className="img-container">
             <Image
-              src={props.imageSrc}
+              src={"/images"+props.imageSrc}
               width={100}
               height={100}
               fill="responsive"
