@@ -5,10 +5,14 @@ export default async (req, res) => {
     try {
       const {db} = await connectToDatabase();
       const { body } = req;
-      const {name,email, phone_number, feedback  } = body;
-      const data = { name,email, phone_number, feedback};
-      await db.collection("feedbacks").insertOne(data);
-      res.send({ sucess: "Sent sucessfully"});
+      const { title, url, imageUrl, password, description } = body;
+      if(password == process.env.PASSWORD){
+          const data = { title, url, imageUrl, description };
+          await db.collection("blog_types").insertOne(data);
+          res.send({ sucess: "Added blog type Successfully"});
+        }else{
+           res.send({ sucess: "Something went Wrong"});
+        }
     } catch (error) {
       const response = {
         error: "300",

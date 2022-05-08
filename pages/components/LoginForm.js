@@ -1,3 +1,4 @@
+import  Router  from 'next/router';
 import React from 'react'
 
 export default function LoginForm() {
@@ -6,7 +7,7 @@ export default function LoginForm() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const info = {email,password};
-      const response = await fetch("/api/SignUp",{
+      const response = await fetch("/api/LoginUser",{
         method:"POST",
         mode:"cors",
         headers:{
@@ -15,8 +16,14 @@ export default function LoginForm() {
         body: JSON.stringify(info)
       });
       const data = await response.json();
-      document.cookie = `API_KEY=${data.api_key}`
-      document.location = "/";
+      if(data.sucess){
+
+        document.cookie = `API_KEY=${data.Api_key}`
+        document.cookie = `NAME=${data.name}`
+        Router.push("/")
+      }else{
+        alert("Invalid creditionals.")
+      }
   }
   return (
     <div className="container">

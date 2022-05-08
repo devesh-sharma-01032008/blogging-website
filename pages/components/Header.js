@@ -1,43 +1,31 @@
 import Link from "next/link";
 import React from "react";
+import { getCookie } from "cookies-next";
+import Menu from "../reusable_components/Menu";
+import { useState } from "react";
+import NavBarLinks from "../reusable_components/NavBarLinks";
 export default function Header() {
+  const [cookie] = useState(getCookie("API_KEY"));
+  const [name] = useState(getCookie("NAME"));
+
   return (
     <header>
-      <div className="menu">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+      <Menu />
       <h1 className="logo">
         i<span>Blog</span>
       </h1>
       <nav className="nav-bar">
         <ul>
-          <li>
-            <Link href={"/"}>
-              <a>Home</a>
-            </Link>
-          </li>
-          <li>
-            <Link href={"/PopularBlogs"}>
-              <a>Blogs</a>
-            </Link>
-          </li>
-          <li>
-            <Link href={"/ContactUs"}>
-              <a>Contact Us</a>
-            </Link>
-          </li>
-          <li>
-            <Link href={"/SignUp"}>
-              <a className="curved-button">Sign Up</a>
-            </Link>
-          </li>
-          <li>
-            <Link href={"/LogIn"}>
-              <a className="curved-button">Login</a>
-            </Link>
-          </li>
+          <NavBarLinks url={'/'} title={"Home"} className={"fa-solid fa-house"}/>
+          <NavBarLinks url={'/Blogs'} title={"Blogs"} className={"fa-brands fa-blogger"} />
+          <NavBarLinks url={'/ContactUs'} title={"Contact Us"} className={"fa-solid fa-address-card"} />
+          {
+            cookie != undefined ? <NavBarLinks url={"/"} title={name} curvedButton={"curved-button"} className={"fa-solid fa-user"}/>
+              : <>
+                <NavBarLinks url={"/SignUp"} title={"Create Account"} curvedButton={"curved-button"} className={"fa-solid fa-plus"}/>
+                <NavBarLinks url={"/LogIn"} title={"Login"} curvedButton={"curved-button"} className={"fa-solid fa-right-to-bracket"}/>
+              </>
+          }
         </ul>
       </nav>
     </header>

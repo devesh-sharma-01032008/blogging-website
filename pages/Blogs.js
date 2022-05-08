@@ -1,15 +1,15 @@
 import Head from "next/head";
 import React, { useState, useEffect } from "react";
-import PopularBlog from "./reusable_components/PopularBlog";
+import Blog from "./reusable_components/Blog";
 
 export default function PopularBlogs() {
-  const [popularBlogs, setPopularBlogs] = useState([]);
+  const [blogs, setBlogs] = useState([]);
   useEffect(async () => {
-    const response = await fetch("/api/GetPopularBlogs");
+    const response = await fetch("/api/GetBlogs");
     const data = await response.json();
     console.log(data.data)
-    setPopularBlogs(data.data);
-    console.log(popularBlogs);
+    setBlogs(data.data);
+    console.log(blogs);
     console.log(data);
   }, []);
   return (
@@ -18,14 +18,15 @@ export default function PopularBlogs() {
         <title>IBlog: Popular Blogs</title>
       </Head>
       <section className="container">
-        <h1 className="first-heading">Popular Blogs</h1>
-        {popularBlogs.map((element) => {
+        <h1 className="first-heading">Blogs</h1>
+        {blogs.map((element) => {
           return (
-            <PopularBlog
+            <Blog
               key={element._id}
               title={element.title}
               description={element.description}
               url={element.url}
+              imageUrl={element.imageUrl}
             />
           );
         })}

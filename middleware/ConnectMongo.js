@@ -1,5 +1,5 @@
 import {MongoClient, ServerApiVersion} from "mongodb";
-const {MONGO_DB, MONGO_URI} =   process.env;
+const MONGO_DB = "iBlog", MONGO_URI =   "mongodb://localhost:27017";
 
 
 let cachedClient, cachedDb;

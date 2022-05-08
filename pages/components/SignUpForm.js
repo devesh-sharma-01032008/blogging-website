@@ -1,3 +1,4 @@
+import  Router from 'next/router';
 import React from 'react'
 
 export default function SignUpForm() {
@@ -19,9 +20,15 @@ export default function SignUpForm() {
         body: JSON.stringify(info)
       });
       const data = await response.json();
-      alert(data.api_key);
-      document.cookie = `API_KEY=${data.api_key}`
-      document.location = "/";
+      console.log(data);
+      if (data.sucess) {
+        document.cookie = `API_KEY=${data.Api_key}`
+        document.cookie = `NAME=${data.name}`
+        Router.push("/")
+        
+      } else {
+        alert("Please fill the form correcctly.");
+      }
     }else{
       alert("Please fill the form correcctly.");
     }
