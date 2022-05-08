@@ -7,16 +7,19 @@ import NavBarLinks from "../reusable_components/NavBarLinks";
 export default function Header() {
   const [cookie] = useState(getCookie("API_KEY"));
   const [name] = useState(getCookie("NAME"));
-
+  const [position,setPosition] = useState("-100%");
+  const toggleMenu = ()=>{
+    position == "-100%" ? setPosition("0%") : setPosition("-100%");
+  }
   return (
     <header>
-      <Menu />
+      <Menu event={toggleMenu}/>
       <h1 className="logo">
         i<span>Blog</span>
       </h1>
-      <nav className="nav-bar">
+      <nav className="nav-bar"  style={{left:position}}>
         <ul>
-          <NavBarLinks url={'/'} title={"Home"} className={"fa-solid fa-house"}/>
+          <NavBarLinks url={'/'} title={"Home"} className={"fa-solid fa-house"} active={"active"}/>
           <NavBarLinks url={'/Blogs'} title={"Blogs"} className={"fa-brands fa-blogger"} />
           <NavBarLinks url={'/ContactUs'} title={"Contact Us"} className={"fa-solid fa-address-card"} />
           {

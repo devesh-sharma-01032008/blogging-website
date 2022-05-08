@@ -22,13 +22,13 @@ export default function Blog(props) {
         </div>
         <div className="btn-container-horizontal popular-blog-btn">
           <Link href={props.url} >
-            <a className="btn">Read More</a>
+            <a className="btn"><i className="fa-solid fa-circle-arrow-right icon-sm"></i></a>
           </Link>
           <Link href={"/"} >
-            <a className="btn">View Author Detials</a>
+            <a className="btn"><i className="fa-solid fa-user icon-sm"></i></a>
           </Link>
           <Link href={"/"} >
-            <a className="btn">Share</a>
+            <a className="btn"><i className="fa-solid fa-share icon-sm"></i></a>
           </Link>
         </div>
       </div>

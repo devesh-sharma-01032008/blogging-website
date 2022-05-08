@@ -22,13 +22,9 @@ export default function BlogsType(props) {
         </div>
         <div className="btn-container-horizontal">
           <Link href={props.blogUrl}>
-            <a className="btn">
-              View Content
-            </a>
-          </Link>
-          <Link href={"/"}>
-            <a className="btn">
-              Visit Blogs
+            <a className="btn" title="view blogs">
+            <i className="fa-solid fa-eye icon-sm" style={{margin:"0rem 1rem"}}></i>
+            View Blogs
             </a>
           </Link>
         </div>
