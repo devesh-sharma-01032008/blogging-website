@@ -1,4 +1,4 @@
-import MainBody from './components/MainBody'
+import MainBody from './../public/components/MainBody'
 
 export default function Home() {
   return (

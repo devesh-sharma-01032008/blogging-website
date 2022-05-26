@@ -111,6 +111,17 @@ Classes starts here
   gap: 15px;
 }
 
+.reloader{
+  content: "";
+  display: block;
+  width: 0%;
+  height: 5px;
+  background-color:rgb(255, 4, 4);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 5px;
+}
 /*
 ==========================================================================
   NavBar style ends here
@@ -432,6 +443,7 @@ responsive stye begins here
   }
   .logo{
     margin-left: 6rem;
+    position: relative;
   }
   .menu{
     display: block;

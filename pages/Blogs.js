@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React, { useState, useEffect } from "react";
-import Blog from "./reusable_components/Blog";
+import Blog from "./../public/reusable_components/Blog";
 
 export default function PopularBlogs() {
   const [blogs, setBlogs] = useState([]);

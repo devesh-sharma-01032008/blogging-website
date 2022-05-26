@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function NavBarLinks(props) {
   return (
-    <li className={`${props.curvedButton} nav-link ${props.active}`}>
+    <li className={`${props.curvedButton} nav-link ${props.active}`} onClick={props.startReloader}>
       <i className={`${props.className} icon-sm`}></i>
       <Link href={props.url}>
         <a>{props.title}</a>
